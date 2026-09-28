@@ -1097,6 +1097,87 @@ a:hover {
   font-size: 1.0625rem;
 }
 
+.job__dates {
+  font: 500 var(--t-xs) / 1 var(--f-mono);
+  font-stretch: 87.5%;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* earlier role at the same company, stacked under the current one */
+.job__prev {
+  margin: 4px 0 20px;
+  padding-top: 20px;
+  border-top: 1px dashed var(--line-strong);
+}
+
+.job__role--prev {
+  font-size: 1.0625rem;
+  color: var(--ink-2);
+}
+
+.job__prev .job__org {
+  margin-bottom: 10px;
+}
+
+/* headline results */
+
+.impact {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin: 0 0 40px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+@media (min-width: 900px) {
+  .impact {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.impact div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 18px 22px;
+  background: var(--bg-raised);
+}
+
+.impact dd {
+  order: -1;
+  margin: 0;
+  font-family: var(--f-display);
+  font-stretch: 118%;
+  font-weight: 800;
+  font-size: clamp(1.9rem, 3.2vw, 2.5rem);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  font-variant-numeric: tabular-nums;
+}
+
+.impact dd span {
+  color: var(--accent);
+}
+
+.impact dd small {
+  margin-right: 6px;
+  font: 500 var(--t-xs) / 1 var(--f-mono);
+  font-stretch: 87.5%;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.impact dt {
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+
 /* case study */
 
 .case {

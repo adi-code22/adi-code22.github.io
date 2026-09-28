@@ -60,7 +60,8 @@
       "https://x.com/AdityaKrishnanP",
       "https://www.linkedin.com/in/adi-code22/",
       "https://github.com/adi-code22",
-      "https://substack.com/@adityakrishnanp"
+      "https://substack.com/@adityakrishnanp",
+      "https://leetcode.com/adi-code22"
     ]
   }
   </script>
@@ -109,8 +110,7 @@
           <div class="hero__actions">
             <a class="btn btn--primary" href="mailto:adityakrishnanp007@gmail.com">Email me</a>
             <a class="btn" href="https://x.com/AdityaKrishnanP" rel="noopener">Follow on X <span class="arrow" aria-hidden="true">↗</span></a>
-            <!-- Unhide once an up-to-date résumé is at resume/Adityakrishnan.pdf -->
-            <a class="btn" href="resume/Adityakrishnan.pdf" hidden>Résumé (PDF)</a>
+            <a class="btn" href="resume/Adityakrishnan.pdf">Résumé (PDF)</a>
           </div>
           <ul class="hero__links">
             <li><a href="https://www.linkedin.com/in/adi-code22/" rel="noopener">LinkedIn <span class="arrow" aria-hidden="true">↗</span></a></li>
@@ -157,13 +157,13 @@
               <li class="layer" data-status="routing to a replica">
                 <span class="layer__node" aria-hidden="true"></span>
                 <span class="layer__name">Cluster</span>
-                <span class="layer__what"><span class="layer__tools">Kubernetes · KEDA · Istio</span><span class="layer__spec">autoscale on queue depth</span></span>
+                <span class="layer__what"><span class="layer__tools">Kubernetes · KEDA · KAI-Scheduler</span><span class="layer__spec">autoscale on queue depth</span></span>
                 <span class="layer__led" aria-hidden="true"></span>
               </li>
               <li class="layer" data-status="landing on a GPU node">
                 <span class="layer__node" aria-hidden="true"></span>
                 <span class="layer__name">Node</span>
-                <span class="layer__what"><span class="layer__tools">containerd · NVIDIA device plugin</span><span class="layer__spec">nvidia.com/gpu: 8</span></span>
+                <span class="layer__what"><span class="layer__tools">NVIDIA device plugin · MIG</span><span class="layer__spec">one H100, several workloads</span></span>
                 <span class="layer__led" aria-hidden="true"></span>
               </li>
               <li class="layer" data-status="joining a running batch">
@@ -207,7 +207,7 @@
             <div class="prose">
               <p>At Simplismart I work on the platform that serves models in production. That means Kubernetes clusters full of NVIDIA GPUs, spread across AWS, Azure, GCP and on-prem hardware, plus the tooling to deploy, scale and watch them.</p>
               <p>Outside work I keep going further down the stack, into inference runtimes, CUDA and how a GPU actually spends its clock cycles. I learn by building small experiments, breaking things, and writing up what I find.</p>
-              <p>I got here the long way round. I started out building Flutter apps and ML models at hackathons, then wrote Java integration services at Baton-Ubixi before moving into infrastructure.</p>
+              <p>I got here the long way round. I started out building Flutter apps and ML models at hackathons, then spent two years at Baton Systems, where Java integration work slowly turned into Kubernetes work. Since October 2025 it has been infrastructure full time.</p>
             </div>
           </div>
 
@@ -218,6 +218,7 @@
             <dl class="facts">
               <div><dt>Based in</dt><dd>Bengaluru, India</dd></div>
               <div><dt>Working on</dt><dd>Inference infrastructure</dd></div>
+              <div><dt>Experience</dt><dd>3+ years in production</dd></div>
               <div><dt>Hardware</dt><dd>NVIDIA H100, B200, L40S</dd></div>
               <div><dt>Clouds</dt><dd>AWS, Azure, GCP, on-prem</dd></div>
               <div><dt>Studied</dt><dd>B.Tech, Computer Science</dd></div>
@@ -255,7 +256,7 @@
               </div>
               <p>Scaling that across GPUs, nodes, clusters, regions and clouds, while keeping latency, availability and utilization where they need to be.</p>
               <ul class="tags">
-                <li>Kubernetes</li><li>Karmada</li><li>KEDA</li><li>HPA</li><li>GPU scheduling</li><li>NVIDIA device plugin</li><li>Istio</li><li>multi-tenancy</li><li>AWS</li><li>Azure</li><li>GCP</li><li>Terraform</li><li>Weka</li>
+                <li>Kubernetes</li><li>kubeadm</li><li>Karmada</li><li>KEDA</li><li>KAI-Scheduler</li><li>MIG</li><li>NVIDIA GDS</li><li>WekaFS</li><li>WireGuard</li><li>multi-tenancy</li><li>AWS</li><li>Azure</li><li>GCP</li><li>Terraform</li>
               </ul>
             </article>
             <article class="layer3">
@@ -265,7 +266,7 @@
               </div>
               <p>Giving engineers the right abstraction to deploy and run models, without taking away control.</p>
               <ul class="tags">
-                <li>Helm</li><li>ArgoCD</li><li>GitHub Actions</li><li>Prometheus</li><li>Grafana</li><li>Mimir</li><li>Loki</li><li>Alloy</li><li>NVIDIA DCGM</li><li>incident response</li><li>RCA</li>
+                <li>Helm</li><li>ArgoCD</li><li>Prometheus</li><li>Grafana Cloud</li><li>Loki</li><li>Mimir</li><li>NVIDIA DCGM</li><li>ClickHouse</li><li>Kafka</li><li>PagerDuty</li><li>incident response</li><li>RCA</li>
               </ul>
             </article>
           </div>
@@ -283,39 +284,58 @@
         </header>
 
         <div>
+          <dl class="impact">
+            <div><dt>lower GPU pod cold-start latency, from warm-pool and scale-up work across three clouds</dt><dd>90<span>%</span></dd></div>
+            <div><dt>workloads sharing a single H100, with MIG and KAI-Scheduler</dt><dd>4<span>+</span></dd></div>
+            <div><dt>less metrics cardinality in a zero-downtime move to Grafana Cloud</dt><dd><small>up to</small>80<span>%</span></dd></div>
+            <div><dt>from Cloud Infrastructure Engineer to Senior, Oct 2025 to Apr 2026</dt><dd>6<span> mo</span></dd></div>
+          </dl>
+
           <div class="jobs">
             <article class="job">
-              <div class="job__when"><span>2025 – now</span><span class="pill pill--ok">Running</span></div>
+              <div class="job__when"><span>Oct 2025 – now</span><span class="pill pill--ok">Running</span></div>
               <div>
                 <h3 class="job__role">Sr. Cloud Infrastructure Engineer</h3>
-                <p class="job__org"><a href="https://simplismart.ai" rel="noopener">Simplismart</a> · Bengaluru</p>
+                <p class="job__org"><a href="https://simplismart.ai" rel="noopener">Simplismart</a> · Bengaluru · <span class="job__dates">Apr 2026 – now</span></p>
                 <p class="job__summary">Simplismart runs a platform for fast, production AI inference. I work on the infrastructure underneath it.</p>
                 <ul class="job__points">
-                  <li>Run Kubernetes infrastructure for production model serving on NVIDIA H100, B200 and L40S GPUs, including GPU-aware scheduling.</li>
-                  <li>Implemented multi-cluster federation with Karmada, bringing independent Kubernetes clusters under one control plane.</li>
-                  <li>Built observability for GPU workloads on Prometheus, Grafana, Mimir, Loki, Alloy and NVIDIA DCGM.</li>
-                  <li>Deploy and autoscale workloads with Helm, ArgoCD and KEDA across AWS, Azure, GCP and on-prem clusters.</li>
-                  <li>Work on multi-tenant cluster isolation, production debugging, incident response and root-cause analysis.</li>
+                  <li>Built a self-hosted Kubernetes platform end to end with kubeadm for a multi-tenant GPU inference fleet.</li>
+                  <li>Rolled out KAI-Scheduler with MIG-based fractional GPU sharing, priority-based node affinity and NVIDIA GDS, so 4+ workloads can share a single H100.</li>
+                  <li>Led a zero-downtime migration from self-hosted Loki and Mimir to Grafana Cloud, cutting metrics cardinality by up to 80% and scoping alerts per org for customer-facing SLAs.</li>
+                  <li>Implemented multi-cluster federation with Karmada, bringing independent clusters under one control plane.</li>
+                  <li>Drove warm-pool stabilization and faster scale-up across AWS, Azure and GCP, cutting GPU pod cold-start latency by 90% for high-concurrency inference.</li>
                 </ul>
+
+                <div class="job__prev">
+                  <h4 class="job__role job__role--prev">Cloud Infrastructure Engineer</h4>
+                  <p class="job__org">Simplismart · <span class="job__dates">Oct 2025 – Mar 2026</span></p>
+                  <ul class="job__points">
+                    <li>Hardened production clusters with RBAC, WAF, ZeroSSL/TLS automation and multi-cloud connectivity over WireGuard VPC peering, closing security gaps ahead of customer onboarding.</li>
+                    <li>Ended recurring storage outages by fixing WekaFS and Loki/Mimir PVC issues, and enabled RWX volumes on all three clouds for shared model storage.</li>
+                    <li>Cut GPU idle-compute cost with KEDA-driven autoscaling and Cluster Autoscaler node groups.</li>
+                  </ul>
+                </div>
+
                 <ul class="tags">
-                  <li>Kubernetes</li><li>Karmada</li><li>KEDA</li><li>ArgoCD</li><li>Helm</li><li>Istio</li><li>Terraform</li><li>vLLM</li><li>DCGM</li>
+                  <li>Kubernetes</li><li>kubeadm</li><li>KAI-Scheduler</li><li>MIG</li><li>Karmada</li><li>KEDA</li><li>ArgoCD</li><li>Helm</li><li>Terraform</li><li>Grafana Cloud</li><li>WekaFS</li>
                 </ul>
               </div>
             </article>
 
             <article class="job">
-              <div class="job__when"><span>Aug 2023 – 2025</span><span class="pill">Completed</span></div>
+              <div class="job__when"><span>Aug 2023 – Sep 2025</span><span class="pill">Completed</span></div>
               <div>
-                <h3 class="job__role">Software Engineer 2</h3>
-                <p class="job__org">Baton-Ubixi Systems · Chennai</p>
+                <h3 class="job__role">Software Engineer II, Infrastructure</h3>
+                <p class="job__org">Baton Systems · Chennai</p>
                 <ul class="job__points">
-                  <li>Reworked an XML-configured SFTP service to be database-driven, so Apache Camel routes change at runtime without a restart.</li>
+                  <li>Set up HPA, node affinity and pod tolerations in Kubernetes to absorb traffic spikes while keeping node utilization efficient.</li>
+                  <li>Built a Kubernetes-native, low-code integration tool on Camel Karavan and AtlasMap, so non-engineers could build ETL workflows.</li>
                   <li>Built an SFTP health check wired into PagerDuty that cut manual intervention by 30%.</li>
                   <li>Wrote an ingestion automation tool that took environment setup from 5 days to 5 hours.</li>
-                  <li>Built a cloud-native, low-code integration tool on Camel Karavan and AtlasMap for ETL workflows.</li>
+                  <li>Earned 3 Spot Awards (Q1 2024, Q3 2024, Q1 2025) for automation and infrastructure work.</li>
                 </ul>
                 <ul class="tags">
-                  <li>Java</li><li>Spring Boot</li><li>Apache Camel</li><li>MySQL</li><li>Docker</li><li>Kubernetes</li><li>Python</li>
+                  <li>Java</li><li>Spring Boot</li><li>Kubernetes</li><li>Helm</li><li>Apache Camel</li><li>MySQL</li><li>PagerDuty</li>
                 </ul>
               </div>
             </article>
@@ -337,8 +357,8 @@
             <article class="job job--edu">
               <div class="job__when"><span>2019 – 2023</span><span class="pill">Completed</span></div>
               <div>
-                <h3 class="job__role">B.Tech, Computer Science</h3>
-                <p class="job__org">Christ College of Engineering · Irinjalakuda, Kerala · CGPA 8.7</p>
+                <h3 class="job__role">B.Tech, Computer Science &amp; Engineering</h3>
+                <p class="job__org">Christ College of Engineering · Irinjalakuda, Kerala · CGPA 8.63</p>
               </div>
             </article>
           </div>
@@ -526,15 +546,22 @@
                 <li>
                   <span class="log__when">2025</span>
                   <div>
+                    <h4>Speaker, DevDay Chennai</h4>
+                    <p>A talk on eBPF.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="log__when">2025</span>
+                  <div>
                     <h4>Speaker, Kochi FOSS</h4>
                     <p>A talk on browser automation with Selenium.</p>
                   </div>
                 </li>
                 <li>
-                  <span class="log__when">2021 – 22</span>
+                  <span class="log__when">College</span>
                   <div>
-                    <h4>Four hackathon wins</h4>
-                    <p>Hac'KP 2021 by Kerala Police (dark-web monitoring), Hack@Arch 2022 (AI travel guide), RIBC 2022 (decentralised cab booking) and EY WhyHack 2022 (pothole detection).</p>
+                    <h4>Five hackathon wins</h4>
+                    <p>One international and four national, including Hac'KP 2021 by Kerala Police (dark-web monitoring), Hack@Arch 2022 (AI travel guide), RIBC 2022 (decentralised cab booking) and EY WhyHack 2022 (pothole detection).</p>
                   </div>
                 </li>
                 <li>
@@ -579,6 +606,8 @@
           <li><a href="https://www.linkedin.com/in/adi-code22/" rel="noopener"><span class="ep__k">LinkedIn</span><span class="ep__v">in/adi-code22</span><span aria-hidden="true">↗</span></a></li>
           <li><a href="https://github.com/adi-code22" rel="noopener"><span class="ep__k">GitHub</span><span class="ep__v">adi-code22</span><span aria-hidden="true">↗</span></a></li>
           <li><a href="https://substack.com/@adityakrishnanp" rel="noopener"><span class="ep__k">Substack</span><span class="ep__v">@adityakrishnanp</span><span aria-hidden="true">↗</span></a></li>
+          <li><a href="https://leetcode.com/adi-code22" rel="noopener"><span class="ep__k">LeetCode</span><span class="ep__v">adi-code22</span><span aria-hidden="true">↗</span></a></li>
+          <li><a href="resume/Adityakrishnan.pdf"><span class="ep__k">Résumé</span><span class="ep__v">imaditya.tech/resume</span><span aria-hidden="true">↓</span></a></li>
         </ul>
 
         <footer class="footer">
