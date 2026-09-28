@@ -1,45 +1,595 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Aditya Krishnan · AI infrastructure engineer</title>
+  <meta name="description" content="Aditya Krishnan is a Sr. Cloud Infrastructure Engineer at Simplismart in Bengaluru. He builds the infrastructure behind AI inference: GPUs, inference runtimes, Kubernetes, and multi-cluster, multi-cloud platforms.">
+  <meta name="author" content="Aditya Krishnan">
+  <link rel="canonical" href="https://imaditya.tech/">
 
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
+  <meta name="theme-color" content="#eff1f2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0f14" media="(prefers-color-scheme: dark)">
 
-    Fore more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-  -->
-  <base href="/">
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Aditya Krishnan">
+  <meta property="og:title" content="Aditya Krishnan · AI infrastructure engineer">
+  <meta property="og:description" content="Building the infrastructure behind AI inference. GPUs, inference runtimes, Kubernetes, and the clusters and clouds underneath them.">
+  <meta property="og:url" content="https://imaditya.tech/">
+  <meta property="og:image" content="https://imaditya.tech/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Aditya Krishnan, AI infrastructure engineer. Building the infrastructure behind AI inference.">
+  <meta property="profile:first_name" content="Aditya">
+  <meta property="profile:last_name" content="Krishnan">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@AdityaKrishnanP">
+  <meta name="twitter:creator" content="@AdityaKrishnanP">
 
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
-
-  <!-- iOS meta tags & icons -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="imAditya">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
-
-  <title>imAditya</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.png" type="image/png" sizes="48x48">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Martian+Mono:wdth,wght@75..112.5,100..800&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap">
+  <link rel="stylesheet" href="assets/css/site.css">
+
+  <script>
+    try {
+      var t = localStorage.getItem("theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Aditya Krishnan",
+    "url": "https://imaditya.tech/",
+    "image": "https://imaditya.tech/assets/img/aditya.jpg",
+    "jobTitle": "Sr. Cloud Infrastructure Engineer",
+    "worksFor": { "@type": "Organization", "name": "Simplismart", "url": "https://simplismart.ai" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Bengaluru", "addressCountry": "IN" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Christ College of Engineering, Irinjalakuda" },
+    "email": "mailto:adityakrishnanp007@gmail.com",
+    "knowsAbout": ["AI inference infrastructure", "Kubernetes", "GPU infrastructure", "vLLM", "CUDA", "Karmada", "Multi-cluster Kubernetes", "Observability", "Cloud infrastructure"],
+    "sameAs": [
+      "https://x.com/AdityaKrishnanP",
+      "https://www.linkedin.com/in/adi-code22/",
+      "https://github.com/adi-code22",
+      "https://substack.com/@adityakrishnanp"
+    ]
+  }
+  </script>
 </head>
 <body>
-  <!-- This script installs service_worker.js to provide PWA functionality to
-       application. For more information, see:
-       https://developers.google.com/web/fundamentals/primers/service-workers -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('flutter-first-frame', function () {
-        navigator.serviceWorker.register('flutter_service_worker.js?v=1768414693');
-      });
-    }
-  </script>
-  <script src="main.dart.js" type="application/javascript"></script>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav" id="nav">
+    <div class="wrap nav__inner">
+      <a class="brand" href="#top" aria-label="Aditya Krishnan, back to top">
+        <svg class="brand__mark" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="3.5" width="18" height="4.5" rx="1"></rect>
+          <rect class="hl" x="3" y="9.75" width="18" height="4.5" rx="1"></rect>
+          <rect x="3" y="16" width="18" height="4.5" rx="1"></rect>
+        </svg>
+        <span>Aditya Krishnan</span>
+      </a>
+      <nav aria-label="Sections">
+        <ul class="nav__links">
+          <li><a href="#work">Work</a></li>
+          <li><a href="#bench">Notes</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#community">Community</a></li>
+          <li class="nav__keep"><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.6"></circle>
+          <path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- hero -->
+    <div class="hero-shell" id="top">
+      <section class="wrap hero" aria-labelledby="hero-name">
+        <div class="hero__text">
+          <p class="eyebrow"><span class="led" aria-hidden="true"></span>Sr. Cloud Infrastructure Engineer at <a href="https://simplismart.ai" rel="noopener">Simplismart</a></p>
+          <h1 class="hero__name" id="hero-name"><span>Aditya</span><span>Krishnan</span></h1>
+          <p class="hero__thesis">I build the infrastructure AI inference runs on.</p>
+          <p class="hero__sub">GPUs, inference runtimes, Kubernetes, and the clusters and clouds underneath them. I like understanding what happens below the abstractions.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="mailto:adityakrishnanp007@gmail.com">Email me</a>
+            <a class="btn" href="https://x.com/AdityaKrishnanP" rel="noopener">Follow on X <span class="arrow" aria-hidden="true">↗</span></a>
+            <!-- Unhide once an up-to-date résumé is at resume/Adityakrishnan.pdf -->
+            <a class="btn" href="resume/Adityakrishnan.pdf" hidden>Résumé (PDF)</a>
+          </div>
+          <ul class="hero__links">
+            <li><a href="https://www.linkedin.com/in/adi-code22/" rel="noopener">LinkedIn <span class="arrow" aria-hidden="true">↗</span></a></li>
+            <li><a href="https://github.com/adi-code22" rel="noopener">GitHub <span class="arrow" aria-hidden="true">↗</span></a></li>
+            <li><a href="https://substack.com/@adityakrishnanp" rel="noopener">Substack <span class="arrow" aria-hidden="true">↗</span></a></li>
+          </ul>
+          <p class="hero__meta">
+            <span><b>Bengaluru, IN</b> · <time id="local-time">IST</time></span>
+            <span>Kubernetes · vLLM · CUDA · GPU systems</span>
+          </p>
+        </div>
+
+        <figure class="stack" id="stack" aria-labelledby="stack-cap">
+          <div class="stack__head">
+            <div class="stack__req">
+              <span><span class="stack__verb">POST</span>/v1/chat/completions</span>
+              <span class="stack__status" id="stack-status" data-state="ok">200 OK</span>
+            </div>
+            <dl class="stack__io">
+              <dt>Prompt</dt>
+              <dd class="stack__prompt" id="stack-prompt">What does the KV cache do?</dd>
+              <dt>Tokens</dt>
+              <dd class="stack__answer">
+                <span class="stack__sizer" aria-hidden="true">Decode is memory-bound. Batching reuses every weight read from HBM across many requests at once.</span>
+                <span class="stack__resp" id="stack-resp">It keeps the keys and values of tokens already processed, so each new token only computes its own.</span>
+              </dd>
+            </dl>
+          </div>
+
+          <div class="stack__body">
+            <ol class="stack__layers">
+              <li class="layer" data-status="entering a region">
+                <span class="layer__node" aria-hidden="true"></span>
+                <span class="layer__name">Cloud</span>
+                <span class="layer__what"><span class="layer__tools">AWS · Azure · GCP · on-prem</span><span class="layer__spec">GPUs wherever there is capacity</span></span>
+                <span class="layer__led" aria-hidden="true"></span>
+              </li>
+              <li class="layer" data-status="picking a cluster">
+                <span class="layer__node" aria-hidden="true"></span>
+                <span class="layer__name">Fleet</span>
+                <span class="layer__what"><span class="layer__tools">Karmada</span><span class="layer__spec">one control plane, many clusters</span></span>
+                <span class="layer__led" aria-hidden="true"></span>
+              </li>
+              <li class="layer" data-status="routing to a replica">
+                <span class="layer__node" aria-hidden="true"></span>
+                <span class="layer__name">Cluster</span>
+                <span class="layer__what"><span class="layer__tools">Kubernetes · KEDA · Istio</span><span class="layer__spec">autoscale on queue depth</span></span>
+                <span class="layer__led" aria-hidden="true"></span>
+              </li>
+              <li class="layer" data-status="landing on a GPU node">
+                <span class="layer__node" aria-hidden="true"></span>
+                <span class="layer__name">Node</span>
+                <span class="layer__what"><span class="layer__tools">containerd · NVIDIA device plugin</span><span class="layer__spec">nvidia.com/gpu: 8</span></span>
+                <span class="layer__led" aria-hidden="true"></span>
+              </li>
+              <li class="layer" data-status="joining a running batch">
+                <span class="layer__node" aria-hidden="true"></span>
+                <span class="layer__name">Runtime</span>
+                <span class="layer__what"><span class="layer__tools">vLLM · SGLang · TensorRT-LLM</span><span class="layer__spec">continuous batching · PagedAttention</span></span>
+                <span class="layer__led" aria-hidden="true"></span>
+              </li>
+              <li class="layer" data-status="launching kernels">
+                <span class="layer__node" aria-hidden="true"></span>
+                <span class="layer__name">Kernel</span>
+                <span class="layer__what"><span class="layer__tools">CUDA</span><span class="layer__spec">warps of 32 threads</span></span>
+                <span class="layer__led" aria-hidden="true"></span>
+              </li>
+              <li class="layer" data-status="running on 132 SMs">
+                <span class="layer__node" aria-hidden="true"></span>
+                <span class="layer__name">Silicon</span>
+                <span class="layer__what"><span class="layer__tools">H100 · B200 · L40S</span><span class="layer__spec">H100 SXM · 132 SMs · 80 GB HBM3</span></span>
+                <span class="sm-grid" id="sm-grid" aria-hidden="true"></span>
+              </li>
+            </ol>
+            <span class="stack__packet" id="stack-packet" aria-hidden="true"></span>
+          </div>
+
+          <figcaption class="stack__cap" id="stack-cap"><b>Fig. 1</b><span>What sits under a single inference request, cloud to silicon. These are the layers I work in.</span></figcaption>
+        </figure>
+      </section>
+    </div>
+
+    <!-- now -->
+    <section class="section" id="now" aria-labelledby="now-h">
+      <div class="wrap section__grid">
+        <header class="section__head">
+          <p class="label">About</p>
+          <h2 class="section__title" id="now-h">Now</h2>
+        </header>
+
+        <div class="now">
+          <div>
+            <p class="now__opener">I'm an infrastructure engineer working my way deeper into AI systems.</p>
+            <div class="prose">
+              <p>At Simplismart I work on the platform that serves models in production. That means Kubernetes clusters full of NVIDIA GPUs, spread across AWS, Azure, GCP and on-prem hardware, plus the tooling to deploy, scale and watch them.</p>
+              <p>Outside work I keep going further down the stack, into inference runtimes, CUDA and how a GPU actually spends its clock cycles. I learn by building small experiments, breaking things, and writing up what I find.</p>
+              <p>I got here the long way round. I started out building Flutter apps and ML models at hackathons, then wrote Java integration services at Baton-Ubixi before moving into infrastructure.</p>
+            </div>
+          </div>
+
+          <div class="now__side">
+            <figure class="now__photo">
+              <img src="assets/img/aditya.jpg" alt="Portrait of Aditya Krishnan" width="720" height="720" loading="lazy" decoding="async">
+            </figure>
+            <dl class="facts">
+              <div><dt>Based in</dt><dd>Bengaluru, India</dd></div>
+              <div><dt>Working on</dt><dd>Inference infrastructure</dd></div>
+              <div><dt>Hardware</dt><dd>NVIDIA H100, B200, L40S</dd></div>
+              <div><dt>Clouds</dt><dd>AWS, Azure, GCP, on-prem</dd></div>
+              <div><dt>Studied</dt><dd>B.Tech, Computer Science</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- three layers -->
+    <section class="section" id="layers" aria-labelledby="layers-h">
+      <div class="wrap section__grid">
+        <header class="section__head">
+          <p class="label">How I think</p>
+          <h2 class="section__title" id="layers-h">Inference takes three layers</h2>
+        </header>
+
+        <div>
+          <p class="lead">Doing inference well means getting three things right. My day job lives mostly in the second and third. The first is where I'm going deeper.</p>
+          <div class="layers3">
+            <article class="layer3">
+              <div class="layer3__top">
+                <h3>Runtime</h3>
+                <span class="pill pill--accent">Going deeper</span>
+              </div>
+              <p>Making one model fast on one GPU-backed instance.</p>
+              <ul class="tags">
+                <li>vLLM</li><li>SGLang</li><li>TensorRT-LLM</li><li>NVIDIA Dynamo</li><li>continuous batching</li><li>PagedAttention</li><li>KV cache</li><li>speculative decoding</li><li>FP8 / INT4</li><li>CUDA</li>
+              </ul>
+            </article>
+            <article class="layer3">
+              <div class="layer3__top">
+                <h3>Infrastructure</h3>
+                <span class="pill pill--ok">Day to day</span>
+              </div>
+              <p>Scaling that across GPUs, nodes, clusters, regions and clouds, while keeping latency, availability and utilization where they need to be.</p>
+              <ul class="tags">
+                <li>Kubernetes</li><li>Karmada</li><li>KEDA</li><li>HPA</li><li>GPU scheduling</li><li>NVIDIA device plugin</li><li>Istio</li><li>multi-tenancy</li><li>AWS</li><li>Azure</li><li>GCP</li><li>Terraform</li><li>Weka</li>
+              </ul>
+            </article>
+            <article class="layer3">
+              <div class="layer3__top">
+                <h3>Tooling</h3>
+                <span class="pill pill--ok">Day to day</span>
+              </div>
+              <p>Giving engineers the right abstraction to deploy and run models, without taking away control.</p>
+              <ul class="tags">
+                <li>Helm</li><li>ArgoCD</li><li>GitHub Actions</li><li>Prometheus</li><li>Grafana</li><li>Mimir</li><li>Loki</li><li>Alloy</li><li>NVIDIA DCGM</li><li>incident response</li><li>RCA</li>
+              </ul>
+            </article>
+          </div>
+          <p class="langs"><b>Languages</b> · Python, Go, C/C++, Java, Bash</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- work -->
+    <section class="section" id="work" aria-labelledby="work-h">
+      <div class="wrap section__grid">
+        <header class="section__head">
+          <p class="label">Experience</p>
+          <h2 class="section__title" id="work-h">Work</h2>
+        </header>
+
+        <div>
+          <div class="jobs">
+            <article class="job">
+              <div class="job__when"><span>2025 – now</span><span class="pill pill--ok">Running</span></div>
+              <div>
+                <h3 class="job__role">Sr. Cloud Infrastructure Engineer</h3>
+                <p class="job__org"><a href="https://simplismart.ai" rel="noopener">Simplismart</a> · Bengaluru</p>
+                <p class="job__summary">Simplismart runs a platform for fast, production AI inference. I work on the infrastructure underneath it.</p>
+                <ul class="job__points">
+                  <li>Run Kubernetes infrastructure for production model serving on NVIDIA H100, B200 and L40S GPUs, including GPU-aware scheduling.</li>
+                  <li>Implemented multi-cluster federation with Karmada, bringing independent Kubernetes clusters under one control plane.</li>
+                  <li>Built observability for GPU workloads on Prometheus, Grafana, Mimir, Loki, Alloy and NVIDIA DCGM.</li>
+                  <li>Deploy and autoscale workloads with Helm, ArgoCD and KEDA across AWS, Azure, GCP and on-prem clusters.</li>
+                  <li>Work on multi-tenant cluster isolation, production debugging, incident response and root-cause analysis.</li>
+                </ul>
+                <ul class="tags">
+                  <li>Kubernetes</li><li>Karmada</li><li>KEDA</li><li>ArgoCD</li><li>Helm</li><li>Istio</li><li>Terraform</li><li>vLLM</li><li>DCGM</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="job">
+              <div class="job__when"><span>Aug 2023 – 2025</span><span class="pill">Completed</span></div>
+              <div>
+                <h3 class="job__role">Software Engineer 2</h3>
+                <p class="job__org">Baton-Ubixi Systems · Chennai</p>
+                <ul class="job__points">
+                  <li>Reworked an XML-configured SFTP service to be database-driven, so Apache Camel routes change at runtime without a restart.</li>
+                  <li>Built an SFTP health check wired into PagerDuty that cut manual intervention by 30%.</li>
+                  <li>Wrote an ingestion automation tool that took environment setup from 5 days to 5 hours.</li>
+                  <li>Built a cloud-native, low-code integration tool on Camel Karavan and AtlasMap for ETL workflows.</li>
+                </ul>
+                <ul class="tags">
+                  <li>Java</li><li>Spring Boot</li><li>Apache Camel</li><li>MySQL</li><li>Docker</li><li>Kubernetes</li><li>Python</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="job">
+              <div class="job__when"><span>Oct 2022 – Feb 2023</span><span class="pill">Completed</span></div>
+              <div>
+                <h3 class="job__role">Software Engineer Intern</h3>
+                <p class="job__org">Ernst &amp; Young (EY) · Kochi</p>
+                <ul class="job__points">
+                  <li>Built a fleet optimization model in Python using simulated annealing and meta-heuristics, to cut logistics costs across changing pick-up and drop points.</li>
+                </ul>
+                <ul class="tags">
+                  <li>Python</li><li>Docker</li><li>optimization</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="job job--edu">
+              <div class="job__when"><span>2019 – 2023</span><span class="pill">Completed</span></div>
+              <div>
+                <h3 class="job__role">B.Tech, Computer Science</h3>
+                <p class="job__org">Christ College of Engineering · Irinjalakuda, Kerala · CGPA 8.7</p>
+              </div>
+            </article>
+          </div>
+
+          <article class="case" aria-labelledby="case-h">
+            <p class="label">Case study · Simplismart</p>
+            <h3 class="case__title" id="case-h">One control plane for many clusters</h3>
+            <p class="case__lede">Separate Kubernetes clusters are easy to run until you need them to behave like one platform. I implemented federation with Karmada, so workloads across independent clusters are managed from a single place.</p>
+
+            <div class="fed" role="img" aria-label="Diagram: kubectl and ArgoCD talk to the Karmada control plane, which uses propagation and override policies to place workloads on three member clusters, A, B and C, each running its own pods.">
+              <div class="fed__src">kubectl · ArgoCD</div>
+              <div class="fed__cp">
+                <strong>Karmada control plane</strong>
+                <span>karmada-apiserver · scheduler · controller-manager</span>
+                <span class="fed__policy">PropagationPolicy · OverridePolicy</span>
+              </div>
+              <div class="fed__members">
+                <div class="fed__cluster"><span>cluster A</span><span class="pods"><i class="gpu"></i><i class="gpu"></i><i></i><i class="gpu"></i><i></i></span></div>
+                <div class="fed__cluster"><span>cluster B</span><span class="pods"><i class="gpu"></i><i></i><i class="gpu"></i><i></i></span></div>
+                <div class="fed__cluster"><span>cluster C</span><span class="pods"><i class="gpu"></i><i class="gpu"></i><i class="gpu"></i><i></i><i></i><i></i></span></div>
+              </div>
+              <div class="fed__legend"><span><i class="gpu"></i>GPU workload</span><span><i></i>other workload</span></div>
+            </div>
+
+            <div class="case__notes">
+              <div>
+                <h4>Why more than one cluster</h4>
+                <p>GPU capacity sits in different clouds and regions. Separate clusters also keep failures contained and tenants apart.</p>
+              </div>
+              <div>
+                <h4>What Karmada adds</h4>
+                <p>You declare a workload once. Propagation policies decide which member clusters run it, and override policies handle the per-cluster differences.</p>
+              </div>
+              <div>
+                <h4>What it costs</h4>
+                <p>One more control plane to operate, and debugging that now crosses cluster boundaries.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- bench -->
+    <section class="section" id="bench" aria-labelledby="bench-h">
+      <div class="wrap section__grid">
+        <header class="section__head">
+          <p class="label">Notebook</p>
+          <h2 class="section__title" id="bench-h">On the bench</h2>
+        </header>
+
+        <div>
+          <p class="lead">What I'm studying right now. Findings go out on X first, and longer write-ups land on Substack.</p>
+          <div class="bench">
+            <article class="bench__item">
+              <h3><span>runtime</span>vLLM internals</h3>
+              <p>How the scheduler mixes prefill and decode, how PagedAttention hands out KV-cache blocks, and when speculative decoding with a draft model actually pays off.</p>
+            </article>
+            <article class="bench__item">
+              <h3><span>silicon</span>GPUs below the framework</h3>
+              <p>SMs, warps, Tensor Cores, HBM and L2 on the H100. Next up is small CUDA experiments that measure occupancy, L2 hit rate and the point where a kernel turns memory-bound.</p>
+            </article>
+            <article class="bench__item">
+              <h3><span>cluster</span>Routing inference traffic</h3>
+              <p>Routing on queue depth and KV-cache locality instead of round robin, and falling back to a managed provider when a pool runs hot.</p>
+            </article>
+            <article class="bench__item">
+              <h3><span>node</span>Kubernetes internals</h3>
+              <p>The pod lifecycle, scheduling, device plugins, admission webhooks, kube-proxy and DNS. The parts you usually meet for the first time during an incident.</p>
+            </article>
+          </div>
+
+          <figure class="note">
+            <blockquote>A clock is a metronome. Each tick captures state, and the transistors do the actual work between ticks.</blockquote>
+            <figcaption>From my notes on GPU clocks</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- projects -->
+    <section class="section" id="projects" aria-labelledby="projects-h">
+      <div class="wrap section__grid">
+        <header class="section__head">
+          <p class="label">GitHub</p>
+          <h2 class="section__title" id="projects-h">Things I've built</h2>
+        </header>
+
+        <div>
+          <p class="lead">Before infrastructure I built apps and ML models, mostly at hackathons. A few from GitHub that still hold up.</p>
+          <div class="rack">
+            <article class="proj">
+              <div class="proj__top">
+                <h3 class="proj__name"><a href="https://github.com/adi-code22/SwiftPay" rel="noopener">SwiftPay</a></h3>
+                <span class="proj__stars" aria-label="2 stars">★ 2</span>
+              </div>
+              <p>A bank simulator that updates cash and non-cash accounts from SWIFT messages. Spring Boot microservices, tuned for concurrency with ExecutorService, handling around 1,000 TPS.</p>
+              <div class="proj__foot">
+                <ul class="tags"><li>Java</li><li>Spring Boot</li><li>Docker</li><li>AWS</li></ul>
+              </div>
+            </article>
+
+            <article class="proj">
+              <div class="proj__top">
+                <h3 class="proj__name"><a href="https://github.com/adi-code22/TraWell-App" rel="noopener">TraWell</a></h3>
+                <span class="proj__stars" aria-label="25 stars">★ 25</span>
+              </div>
+              <p>An AI travel guide. An on-device TFLite model recognises monuments and narrates their history, with voice-to-voice translation for travellers. Won Hack@Arch 2022.</p>
+              <div class="proj__foot">
+                <ul class="tags"><li>Flutter</li><li>TFLite</li><li>Spring Boot</li></ul>
+                <a class="proj__extra" href="https://trawel01.netlify.app/" rel="noopener">Site ↗</a>
+              </div>
+            </article>
+
+            <article class="proj">
+              <div class="proj__top">
+                <h3 class="proj__name"><a href="https://github.com/adi-code22/AgroMed-App" rel="noopener">AgroMed</a></h3>
+                <span class="proj__stars" aria-label="11 stars">★ 11</span>
+              </div>
+              <p>Field-level identification of pests and plant diseases, with a TFLite image classifier running inside a Flutter app.</p>
+              <div class="proj__foot">
+                <ul class="tags"><li>Flutter</li><li>TFLite</li><li>Firebase</li></ul>
+              </div>
+            </article>
+
+            <article class="proj">
+              <div class="proj__top">
+                <h3 class="proj__name"><a href="https://github.com/adi-code22/cellular-automata-rule30" rel="noopener">Rule 30 in Go</a></h3>
+                <span class="proj__stars" aria-label="1 star">★ 1</span>
+              </div>
+              <p>Wolfram's Rule 30 cellular automaton rendered with Ebiten, to see how a fully deterministic rule produces output that looks random.</p>
+              <div class="proj__foot">
+                <ul class="tags"><li>Go</li><li>Ebiten</li></ul>
+              </div>
+            </article>
+
+            <article class="proj">
+              <div class="proj__top">
+                <h3 class="proj__name"><a href="https://github.com/adi-code22/Miscellaneous" rel="noopener">Miscellaneous</a></h3>
+                <span class="proj__stars" aria-label="0 stars">★ 0</span>
+              </div>
+              <p>Small things built out of curiosity: Bloom filters, why <code class="mono">i++</code> breaks under concurrency, Java annotations and functional interfaces.</p>
+              <div class="proj__foot">
+                <ul class="tags"><li>Java</li><li>concurrency</li></ul>
+              </div>
+            </article>
+
+            <article class="proj">
+              <div class="proj__top">
+                <h3 class="proj__name"><a href="https://github.com/adi-code22/Python-Automation-WhatsApp" rel="noopener">WhatsApp automation</a></h3>
+                <span class="proj__stars" aria-label="7 stars">★ 7</span>
+              </div>
+              <p>Sends WhatsApp messages to a list of saved or unsaved contacts from a spreadsheet, driven by Selenium.</p>
+              <div class="proj__foot">
+                <ul class="tags"><li>Python</li><li>Selenium</li></ul>
+              </div>
+            </article>
+          </div>
+          <a class="btn more" href="https://github.com/adi-code22?tab=repositories" rel="noopener">All repositories on GitHub <span class="arrow" aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- community & writing -->
+    <section class="section" id="community" aria-labelledby="community-h">
+      <div class="wrap section__grid">
+        <header class="section__head">
+          <p class="label">Outside work</p>
+          <h2 class="section__title" id="community-h">Community &amp; writing</h2>
+        </header>
+
+        <div>
+          <p class="lead">I like being around India's open-source and cloud-native communities, from IndiaFOSS to LibreMinds. And I write in public, mostly on X.</p>
+          <div class="community">
+            <div>
+              <h3 class="sub-h">Talks &amp; community</h3>
+              <ul class="log">
+                <li>
+                  <span class="log__when">2026</span>
+                  <div>
+                    <h4>LibreMinds</h4>
+                    <p>Community work on Cloud Native Summit Kerala 2026 and the vLLM Inference Meetup.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="log__when">2025</span>
+                  <div>
+                    <h4>Speaker, Kochi FOSS</h4>
+                    <p>A talk on browser automation with Selenium.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="log__when">2021 – 22</span>
+                  <div>
+                    <h4>Four hackathon wins</h4>
+                    <p>Hac'KP 2021 by Kerala Police (dark-web monitoring), Hack@Arch 2022 (AI travel guide), RIBC 2022 (decentralised cab booking) and EY WhyHack 2022 (pothole detection).</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="log__when">2022</span>
+                  <div>
+                    <h4>Open source</h4>
+                    <p>Patches to <a href="https://github.com/EvamariaTG/EvaMaria" rel="noopener">EvaMaria</a> and <a href="https://github.com/UsergeTeam/Userge" rel="noopener">Userge</a>, two Python Telegram bots. My EvaMaria fork has been forked more than 120 times.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="channels">
+              <h3 class="sub-h">Writing</h3>
+              <a class="channel" href="https://x.com/AdityaKrishnanP" rel="noopener">
+                <span class="channel__top"><span class="label">X</span><span class="channel__cta">Follow ↗</span></span>
+                <span class="channel__handle">@AdityaKrishnanP</span>
+                <p>My public engineering notebook. Short posts on inference, GPUs and Kubernetes, usually about something I broke and then understood.</p>
+              </a>
+              <a class="channel" href="https://substack.com/@adityakrishnanp" rel="noopener">
+                <span class="channel__top"><span class="label">Substack</span><span class="channel__cta">Subscribe ↗</span></span>
+                <span class="channel__handle">@adityakrishnanp</span>
+                <p>Longer write-ups, for when a thread outgrows X.</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- contact -->
+    <section class="contact" id="contact" aria-labelledby="contact-h">
+      <div class="wrap">
+        <p class="label">Contact</p>
+        <h2 class="contact__h" id="contact-h">Working on inference, GPUs or Kubernetes? Let's talk.</h2>
+        <div class="contact__mail">
+          <a class="mail" href="mailto:adityakrishnanp007@gmail.com">adityakrishnanp007@gmail.com</a>
+          <button class="btn btn--small" id="copy-email" type="button" data-email="adityakrishnanp007@gmail.com">Copy</button>
+        </div>
+        <ul class="endpoints">
+          <li><a href="https://x.com/AdityaKrishnanP" rel="noopener"><span class="ep__k">X</span><span class="ep__v">@AdityaKrishnanP</span><span aria-hidden="true">↗</span></a></li>
+          <li><a href="https://www.linkedin.com/in/adi-code22/" rel="noopener"><span class="ep__k">LinkedIn</span><span class="ep__v">in/adi-code22</span><span aria-hidden="true">↗</span></a></li>
+          <li><a href="https://github.com/adi-code22" rel="noopener"><span class="ep__k">GitHub</span><span class="ep__v">adi-code22</span><span aria-hidden="true">↗</span></a></li>
+          <li><a href="https://substack.com/@adityakrishnanp" rel="noopener"><span class="ep__k">Substack</span><span class="ep__v">@adityakrishnanp</span><span aria-hidden="true">↗</span></a></li>
+        </ul>
+
+        <footer class="footer">
+          <span>© <span id="year">2026</span> Aditya Krishnan · Bengaluru</span>
+          <span>Hand-written HTML and CSS, no framework.</span>
+          <a href="#top">Back to top ↑</a>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/site.js" defer></script>
 </body>
 </html>

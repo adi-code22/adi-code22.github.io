@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Not found · Aditya Krishnan</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Martian+Mono:wdth,wght@75..112.5,100..800&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <style>
+    .nf { min-height: 100vh; display: grid; align-content: center; gap: 22px; padding-block: 64px; }
+    .nf h1 { margin: 0; font-family: var(--f-display); font-stretch: 125%; font-weight: 850; font-size: clamp(3rem, 12vw, 8rem); line-height: .9; letter-spacing: -.03em; }
+    .nf pre { margin: 0; padding: 16px 18px; overflow-x: auto; background: var(--bg-raised); border: 1px solid var(--line); border-radius: var(--radius); font: 400 .8125rem/1.7 var(--f-mono); font-stretch: 87.5%; color: var(--ink-2); max-width: 44rem; }
+    .nf pre b { color: var(--accent); font-weight: 600; }
+  </style>
+  <script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+</head>
+<body>
+  <main class="wrap nf">
+    <p class="label">404</p>
+    <h1>Not found</h1>
+<pre><span>$ kubectl get page <span id="p">this-one</span></span>
+<b>Error from server (NotFound):</b> pages "<span id="p2">this-one</span>" not found</pre>
+    <p><a class="btn btn--primary" href="/">Back to imaditya.tech</a></p>
+  </main>
+  <script>
+    var p = location.pathname.replace(/^\/+|\/+$/g, "") || "this-one";
+    document.getElementById("p").textContent = p;
+    document.getElementById("p2").textContent = p;
+  </script>
+</body>
+</html>
